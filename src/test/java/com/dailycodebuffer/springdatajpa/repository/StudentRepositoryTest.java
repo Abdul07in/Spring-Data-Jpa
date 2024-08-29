@@ -17,8 +17,8 @@ class StudentRepositoryTest {
     @Test
     public void saveStudentUsingSaveMethodOfRepository() {
         Student student = Student.builder()
-                .emailId("abdulkanoo@gmail.com")
-                .firstName("Abdul Majeed")
+                .emailId("abdulkanoor@gmail.com")
+                .firstName("Majeed")
                 .lastName("Kanoor")
 //                .guardianName("Dilshad")
 //                .guardianEmail("dkanoor786@gmail.com")
@@ -112,6 +112,7 @@ class StudentRepositoryTest {
     @Test
     public void updateStudentNameByEmailAddress() {
         int i = studentRepository.updateStudentNameByEmailAddress("Abdul Majeed", "abdulkanoo@gmail.com");
+        System.out.println("i = " + i);
     }
 
 }
