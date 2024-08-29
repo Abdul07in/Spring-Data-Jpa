@@ -13,15 +13,15 @@ import java.util.List;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
-    public List<Student> findByFirstName(String firstName);
+    List<Student> findByFirstName(String firstName);
 
-    public List<Student> findByFirstNameContaining(String name);
+    List<Student> findByFirstNameContaining(String name);
 
-    public List<Student> findByLastNameNotNull();
+    List<Student> findByLastNameNotNull();
 
-    public List<Student> findByGuardianName(String guardianName);
+    List<Student> findByGuardianName(String guardianName);
 
-    public Student findByFirstNameAndLastName(String firstName, String lastName);
+    Student findByFirstNameAndLastName(String firstName, String lastName);
 
     // JPQL Query : Based on Classes and not on sql tables
     @Query("select s from Student s where s.emailId = ?1")
@@ -42,7 +42,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     @Transactional
     @Query(value = "update tbl_student set first_name = ?1 where email_address = ?2", nativeQuery = true)
     int updateStudentNameByEmailAddress(String firstName, String emailId);
-
 
 
 }
